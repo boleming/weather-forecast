@@ -1,0 +1,26 @@
+<view class="container bgc">
+  <view class="today">
+  	<view class="info">
+  		<view class="temp">{{today.wendu}}℃</view>
+		<view class="weather">{{today.todayInfo.type}}{{today.todayInfo.low}}{{today.todayInfo.high}}</view>
+		<view>提示：{{today.ganmao}}</view>
+		<view class="city">{{city}}</view>
+  	</view>
+  </view>
+  <form bindsubmit="subForm">
+  	<view class="inoput-row">
+  		<button form-type="submit" class="btn" type="primary">搜索</button>
+  		<input name="url" type="text" maxlength="256" placeholder="{{placeholder}}"/>
+  	</view>
+  </form>
+  <view class="future">
+  	<block wx:for="{{future}}" wx:key="idx">
+  		<view class="future-item">
+  			<view>{{item.date}}</view>
+  			<view>{{item.type}}</view>
+  			<view>{{item.low}}</view>
+  			<view>{{item.high}}</view>
+  		</view>
+  	</block>
+  </view>
+</view>
